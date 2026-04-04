@@ -2,8 +2,8 @@ version: 0.2
 
 env:
   secrets-manager:
-    SONAR_HOST_URL: prod:http://13.127.161.13:9000
-    SONAR_TOKEN: prod:sqp_d7e3e24b1b22379c06e1b27b44802388cca04ea6
+    SONAR_HOST_URL: prod:SONAR_HOST_URL
+    SONAR_TOKEN: prod:SONAR_TOKEN
 
 phases:
   install:
