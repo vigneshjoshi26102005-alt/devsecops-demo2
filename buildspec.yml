@@ -2,8 +2,8 @@ version: 0.2
 
 env:
   secrets-manager:
-    SONAR_HOST_URL: prod:SONAR_HOST_URL
-    SONAR_TOKEN: prod:SONAR_TOKEN
+    SONAR_HOST_URL: prod-new:SONAR_HOST_URL
+    SONAR_TOKEN: prod-new:SONAR_TOKEN
 
 phases:
   install:
