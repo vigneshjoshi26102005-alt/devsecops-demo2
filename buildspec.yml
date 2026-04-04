@@ -12,11 +12,11 @@ phases:
       - apt-get install -y unzip wget
       - wget https://binaries.sonarsource.com/Distribution/sonar-scanner-cli/sonar-scanner-cli-5.0.1.3006-linux.zip
       - unzip sonar-scanner-cli-*.zip
-      - export PATH=$PATH:$(pwd)/sonar-scanner-*/bin
 
   build:
     commands:
-      - sonar-scanner \
+      - echo Running SonarQube Scan
+      - ./sonar-scanner-*/bin/sonar-scanner \
         -Dsonar.projectKey=myapp \
         -Dsonar.sources=. \
         -Dsonar.host.url=$SONAR_HOST_URL \
