@@ -8,18 +8,18 @@ env:
 phases:
   install:
     commands:
-      - apt-get update
+      - apt-get update -y
       - apt-get install -y unzip wget
       - wget https://binaries.sonarsource.com/Distribution/sonar-scanner-cli/sonar-scanner-cli-5.0.1.3006-linux.zip
-      - unzip sonar-scanner-cli-*.zip
+      - unzip sonar-scanner-cli-5.0.1.3006-linux.zip
 
   build:
     commands:
-      - echo Running SonarQube Scan
+      - echo "Running SonarQube Scan"
       - |
-        ./sonar-scanner-*/bin/sonar-scanner \
-        -Dsonar.projectKey=myapp \
-        -Dsonar.sources=. \
-        -Dsonar.host.url=http://13.127.161.13:9000 \
-        -Dsonar.login=sqp_d7e3e24b1b22379c06e1b27b44802388cca04ea6 \
-        -Dsonar.qualitygate.wait=true
+        ./sonar-scanner-5.0.1.3006-linux/bin/sonar-scanner \
+          -Dsonar.projectKey=myapp \
+          -Dsonar.sources=. \
+          -Dsonar.host.url=$SONAR_HOST_URL \
+          -Dsonar.token=$SONAR_TOKEN \
+          -Dsonar.qualitygate.wait=true
